@@ -51,11 +51,47 @@ public class JKBottomSearchView: UIView{
             x:0, y: tableViewOriginY,
             width: frame.width, height:frame.height - tableViewOriginY ))
         tableView.backgroundColor = .clear
+        tableView.bounces = false
         blurView.contentView.addSubview(tableView)
+
+
+        let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(userDidPan))
+        blurView.contentView.addGestureRecognizer(dragGestureRecognizer)
     }
 
-    private func expand(fully:Bool){
-        UIView.animate(withDuration: 1.0) {
+    @objc private func userDidPan(_ sender: UIPanGestureRecognizer){
+        if sender.state == .ended{
+            let currentYPosition = frame.origin.y
+            let toTopDistance = abs(Int32(currentYPosition - minimalYPosition))
+            let toBottomDistance = abs(Int32(currentYPosition  - maximalYPosition))
+            let toCenterDistance = abs(Int32(currentYPosition - (minimalYPosition + maximalYPosition) / 2))
+            let sortedDistances = [toTopDistance,toBottomDistance,toCenterDistance].sorted()
+            if sortedDistances[0] == toTopDistance{
+                expand(fully: true,fast:true)
+            }else if sortedDistances[0] == toBottomDistance{
+                collapse(fully: true,fast:true)
+            }else{
+                collapse(fully: false,fast:true)
+            }
+        }else{
+            let translation = sender.translation(in: self)
+
+            var destinationY = self.frame.origin.y + translation.y
+            if destinationY < minimalYPosition {
+                destinationY = minimalYPosition
+            }else if destinationY > maximalYPosition {
+                destinationY = maximalYPosition
+            }
+            self.frame.origin.y = destinationY
+
+            sender.setTranslation(CGPoint.zero, in: self)
+        }
+    }
+
+
+    private func expand(fully:Bool,fast:Bool = false){
+        let duration = animationDuration(fast: fast)
+        UIView.animate(withDuration: duration) {
             if fully{
                 self.frame.origin.y = self.minimalYPosition
             }else{
@@ -64,13 +100,22 @@ public class JKBottomSearchView: UIView{
         }
     }
 
-    private func collapse(fully:Bool){
-        UIView.animate(withDuration: 1.0) {
+    private func collapse(fully:Bool,fast:Bool = false){
+        let duration = animationDuration(fast: fast)
+        UIView.animate(withDuration: duration) {
             if fully{
                 self.frame.origin.y = self.maximalYPosition
             }else{
                 self.frame.origin.y = (self.minimalYPosition + self.maximalYPosition)/2
             }
+        }
+    }
+
+    private func animationDuration(fast:Bool) -> Double {
+        if fast {
+            return 0.25
+        }else{
+            return 1
         }
     }
 }
