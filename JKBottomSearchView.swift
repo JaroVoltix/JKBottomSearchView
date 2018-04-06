@@ -45,8 +45,14 @@ public class JKBottomSearchView: UIView{
         blurView.contentView.addSubview(searchBar)
         searchBar.delegate = self
         searchBar.enablesReturnKeyAutomatically = false
-    }
 
+        let tableViewOriginY = searchBar.frame.origin.y + searchBar.frame.height
+        let tableView = UITableView(frame: CGRect(
+            x:0, y: tableViewOriginY,
+            width: frame.width, height:frame.height - tableViewOriginY ))
+        tableView.backgroundColor = .clear
+        blurView.contentView.addSubview(tableView)
+    }
 }
 
 extension JKBottomSearchView : UISearchBarDelegate {
