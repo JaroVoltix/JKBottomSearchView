@@ -10,6 +10,15 @@
 		4A693B942077E14100B4FE37 /* JKBottomSearchView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */; };
 		4A693B992077E14100B4FE37 /* JKBottomSearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693B982077E14100B4FE37 /* JKBottomSearchViewTests.swift */; };
 		4A693B9B2077E14100B4FE37 /* JKBottomSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A693B8D2077E14100B4FE37 /* JKBottomSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A693BA52077E18E00B4FE37 /* JKBottomSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */; };
+		4A693BAD2077E29B00B4FE37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693BAC2077E29B00B4FE37 /* AppDelegate.swift */; };
+		4A693BAF2077E29B00B4FE37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693BAE2077E29B00B4FE37 /* ViewController.swift */; };
+		4A693BB22077E29B00B4FE37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A693BB02077E29B00B4FE37 /* Main.storyboard */; };
+		4A693BB42077E29D00B4FE37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A693BB32077E29D00B4FE37 /* Assets.xcassets */; };
+		4A693BB72077E29D00B4FE37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A693BB52077E29D00B4FE37 /* LaunchScreen.storyboard */; };
+		4A693BC22077E29D00B4FE37 /* JKBottomSearchExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693BC12077E29D00B4FE37 /* JKBottomSearchExampleUITests.swift */; };
+		4A693BCA2077E4CC00B4FE37 /* JKBottomSearchView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */; };
+		4A693BCB2077E4CC00B4FE37 /* JKBottomSearchView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +29,35 @@
 			remoteGlobalIDString = 4A693B892077E14100B4FE37;
 			remoteInfo = JKBottomSearchView;
 		};
+		4A693BBE2077E29D00B4FE37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A693B812077E14100B4FE37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A693BA92077E29B00B4FE37;
+			remoteInfo = JKBottomSearchExample;
+		};
+		4A693BCC2077E4CC00B4FE37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A693B812077E14100B4FE37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A693B892077E14100B4FE37;
+			remoteInfo = JKBottomSearchView;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4A693BCE2077E4CC00B4FE37 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4A693BCB2077E4CC00B4FE37 /* JKBottomSearchView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKBottomSearchView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +66,17 @@
 		4A693B932077E14100B4FE37 /* JKBottomSearchViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKBottomSearchViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A693B982077E14100B4FE37 /* JKBottomSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKBottomSearchViewTests.swift; sourceTree = "<group>"; };
 		4A693B9A2077E14100B4FE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKBottomSearchView.swift; sourceTree = "<group>"; };
+		4A693BAA2077E29B00B4FE37 /* JKBottomSearchExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKBottomSearchExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A693BAC2077E29B00B4FE37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A693BAE2077E29B00B4FE37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A693BB12077E29B00B4FE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A693BB32077E29D00B4FE37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A693BB62077E29D00B4FE37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A693BB82077E29D00B4FE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A693BBD2077E29D00B4FE37 /* JKBottomSearchExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKBottomSearchExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A693BC12077E29D00B4FE37 /* JKBottomSearchExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKBottomSearchExampleUITests.swift; sourceTree = "<group>"; };
+		4A693BC32077E29D00B4FE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,14 +95,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A693BA72077E29B00B4FE37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A693BCA2077E4CC00B4FE37 /* JKBottomSearchView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A693BBA2077E29D00B4FE37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4A693B802077E14100B4FE37 = {
 			isa = PBXGroup;
 			children = (
+				4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */,
 				4A693B8C2077E14100B4FE37 /* JKBottomSearchView */,
 				4A693B972077E14100B4FE37 /* JKBottomSearchViewTests */,
+				4A693BAB2077E29B00B4FE37 /* JKBottomSearchExample */,
+				4A693BC02077E29D00B4FE37 /* JKBottomSearchExampleUITests */,
 				4A693B8B2077E14100B4FE37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +130,8 @@
 			children = (
 				4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */,
 				4A693B932077E14100B4FE37 /* JKBottomSearchViewTests.xctest */,
+				4A693BAA2077E29B00B4FE37 /* JKBottomSearchExample.app */,
+				4A693BBD2077E29D00B4FE37 /* JKBottomSearchExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +152,28 @@
 				4A693B9A2077E14100B4FE37 /* Info.plist */,
 			);
 			path = JKBottomSearchViewTests;
+			sourceTree = "<group>";
+		};
+		4A693BAB2077E29B00B4FE37 /* JKBottomSearchExample */ = {
+			isa = PBXGroup;
+			children = (
+				4A693BAC2077E29B00B4FE37 /* AppDelegate.swift */,
+				4A693BAE2077E29B00B4FE37 /* ViewController.swift */,
+				4A693BB02077E29B00B4FE37 /* Main.storyboard */,
+				4A693BB32077E29D00B4FE37 /* Assets.xcassets */,
+				4A693BB52077E29D00B4FE37 /* LaunchScreen.storyboard */,
+				4A693BB82077E29D00B4FE37 /* Info.plist */,
+			);
+			path = JKBottomSearchExample;
+			sourceTree = "<group>";
+		};
+		4A693BC02077E29D00B4FE37 /* JKBottomSearchExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A693BC12077E29D00B4FE37 /* JKBottomSearchExampleUITests.swift */,
+				4A693BC32077E29D00B4FE37 /* Info.plist */,
+			);
+			path = JKBottomSearchExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +226,43 @@
 			productReference = 4A693B932077E14100B4FE37 /* JKBottomSearchViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4A693BA92077E29B00B4FE37 /* JKBottomSearchExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A693BC42077E29D00B4FE37 /* Build configuration list for PBXNativeTarget "JKBottomSearchExample" */;
+			buildPhases = (
+				4A693BA62077E29B00B4FE37 /* Sources */,
+				4A693BA72077E29B00B4FE37 /* Frameworks */,
+				4A693BA82077E29B00B4FE37 /* Resources */,
+				4A693BCE2077E4CC00B4FE37 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A693BCD2077E4CC00B4FE37 /* PBXTargetDependency */,
+			);
+			name = JKBottomSearchExample;
+			productName = JKBottomSearchExample;
+			productReference = 4A693BAA2077E29B00B4FE37 /* JKBottomSearchExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A693BBC2077E29D00B4FE37 /* JKBottomSearchExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A693BC72077E29D00B4FE37 /* Build configuration list for PBXNativeTarget "JKBottomSearchExampleUITests" */;
+			buildPhases = (
+				4A693BB92077E29D00B4FE37 /* Sources */,
+				4A693BBA2077E29D00B4FE37 /* Frameworks */,
+				4A693BBB2077E29D00B4FE37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A693BBF2077E29D00B4FE37 /* PBXTargetDependency */,
+			);
+			name = JKBottomSearchExampleUITests;
+			productName = JKBottomSearchExampleUITests;
+			productReference = 4A693BBD2077E29D00B4FE37 /* JKBottomSearchExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,9 +275,17 @@
 				TargetAttributes = {
 					4A693B892077E14100B4FE37 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 					4A693B922077E14100B4FE37 = {
 						CreatedOnToolsVersion = 9.3;
+					};
+					4A693BA92077E29B00B4FE37 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					4A693BBC2077E29D00B4FE37 = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 4A693BA92077E29B00B4FE37;
 					};
 				};
 			};
@@ -160,6 +295,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4A693B802077E14100B4FE37;
 			productRefGroup = 4A693B8B2077E14100B4FE37 /* Products */;
@@ -168,6 +304,8 @@
 			targets = (
 				4A693B892077E14100B4FE37 /* JKBottomSearchView */,
 				4A693B922077E14100B4FE37 /* JKBottomSearchViewTests */,
+				4A693BA92077E29B00B4FE37 /* JKBottomSearchExample */,
+				4A693BBC2077E29D00B4FE37 /* JKBottomSearchExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +325,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A693BA82077E29B00B4FE37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A693BB72077E29D00B4FE37 /* LaunchScreen.storyboard in Resources */,
+				4A693BB42077E29D00B4FE37 /* Assets.xcassets in Resources */,
+				4A693BB22077E29B00B4FE37 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A693BBB2077E29D00B4FE37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A693BA52077E18E00B4FE37 /* JKBottomSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +361,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4A693BA62077E29B00B4FE37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A693BAF2077E29B00B4FE37 /* ViewController.swift in Sources */,
+				4A693BAD2077E29B00B4FE37 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A693BB92077E29D00B4FE37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A693BC22077E29D00B4FE37 /* JKBottomSearchExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -213,7 +386,36 @@
 			target = 4A693B892077E14100B4FE37 /* JKBottomSearchView */;
 			targetProxy = 4A693B952077E14100B4FE37 /* PBXContainerItemProxy */;
 		};
+		4A693BBF2077E29D00B4FE37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A693BA92077E29B00B4FE37 /* JKBottomSearchExample */;
+			targetProxy = 4A693BBE2077E29D00B4FE37 /* PBXContainerItemProxy */;
+		};
+		4A693BCD2077E4CC00B4FE37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A693B892077E14100B4FE37 /* JKBottomSearchView */;
+			targetProxy = 4A693BCC2077E4CC00B4FE37 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A693BB02077E29B00B4FE37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A693BB12077E29B00B4FE37 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A693BB52077E29D00B4FE37 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A693BB62077E29D00B4FE37 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4A693B9C2077E14100B4FE37 /* Debug */ = {
@@ -339,6 +541,7 @@
 		4A693B9F2077E14100B4FE37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -356,6 +559,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jerronimo.JKBottomSearchView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +568,7 @@
 		4A693BA02077E14100B4FE37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -389,6 +594,7 @@
 		4A693BA22077E14100B4FE37 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K9V2VJ95T;
 				INFOPLIST_FILE = JKBottomSearchViewTests/Info.plist;
@@ -407,6 +613,7 @@
 		4A693BA32077E14100B4FE37 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8K9V2VJ95T;
 				INFOPLIST_FILE = JKBottomSearchViewTests/Info.plist;
@@ -419,6 +626,84 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A693BC52077E29D00B4FE37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8K9V2VJ95T;
+				INFOPLIST_FILE = JKBottomSearchExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerronimo.JKBottomSearchExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A693BC62077E29D00B4FE37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8K9V2VJ95T;
+				INFOPLIST_FILE = JKBottomSearchExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerronimo.JKBottomSearchExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A693BC82077E29D00B4FE37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8K9V2VJ95T;
+				INFOPLIST_FILE = JKBottomSearchExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerronimo.JKBottomSearchExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JKBottomSearchExample;
+			};
+			name = Debug;
+		};
+		4A693BC92077E29D00B4FE37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8K9V2VJ95T;
+				INFOPLIST_FILE = JKBottomSearchExampleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jerronimo.JKBottomSearchExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JKBottomSearchExample;
 			};
 			name = Release;
 		};
@@ -448,6 +733,24 @@
 			buildConfigurations = (
 				4A693BA22077E14100B4FE37 /* Debug */,
 				4A693BA32077E14100B4FE37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A693BC42077E29D00B4FE37 /* Build configuration list for PBXNativeTarget "JKBottomSearchExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A693BC52077E29D00B4FE37 /* Debug */,
+				4A693BC62077E29D00B4FE37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A693BC72077E29D00B4FE37 /* Build configuration list for PBXNativeTarget "JKBottomSearchExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A693BC82077E29D00B4FE37 /* Debug */,
+				4A693BC92077E29D00B4FE37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
