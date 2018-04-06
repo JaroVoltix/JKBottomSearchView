@@ -53,19 +53,35 @@ public class JKBottomSearchView: UIView{
         tableView.backgroundColor = .clear
         blurView.contentView.addSubview(tableView)
     }
+
+    private func expand(fully:Bool){
+        UIView.animate(withDuration: 1.0) {
+            if fully{
+                self.frame.origin.y = self.minimalYPosition
+            }else{
+                self.frame.origin.y = (self.minimalYPosition + self.maximalYPosition)/2
+            }
+        }
+    }
+
+    private func collapse(fully:Bool){
+        UIView.animate(withDuration: 1.0) {
+            if fully{
+                self.frame.origin.y = self.maximalYPosition
+            }else{
+                self.frame.origin.y = (self.minimalYPosition + self.maximalYPosition)/2
+            }
+        }
+    }
 }
 
 extension JKBottomSearchView : UISearchBarDelegate {
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        UIView.animate(withDuration: 1.0) {
-            self.frame.origin.y = self.minimalYPosition
-        }
+        expand(fully: true)
     }
 
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        UIView.animate(withDuration: 1.0) {
-            self.frame.origin.y = self.maximalYPosition
-        }
+        collapse(fully: true)
     }
 
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
