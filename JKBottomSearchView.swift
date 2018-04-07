@@ -8,6 +8,11 @@
 
 import UIKit
 
+public enum JKBottomSearchViewExpanstionState{
+    case fullyExpanded
+    case middle
+    case fullyCollapsed
+}
 
 public class JKBottomSearchView: UIView{
 
@@ -67,11 +72,11 @@ public class JKBottomSearchView: UIView{
             let toCenterDistance = abs(Int32(currentYPosition - (minimalYPosition + maximalYPosition) / 2))
             let sortedDistances = [toTopDistance,toBottomDistance,toCenterDistance].sorted()
             if sortedDistances[0] == toTopDistance{
-                expand(fully: true,fast:true)
+                toggleExpantion(.fullyExpanded,fast:true)
             }else if sortedDistances[0] == toBottomDistance{
-                collapse(fully: true,fast:true)
+                toggleExpantion(.fullyCollapsed,fast:true)
             }else{
-                collapse(fully: false,fast:true)
+                toggleExpantion(.middle,fast:true)
             }
         }else{
             let translation = sender.translation(in: self)
@@ -88,29 +93,6 @@ public class JKBottomSearchView: UIView{
         }
     }
 
-
-    private func expand(fully:Bool,fast:Bool = false){
-        let duration = animationDuration(fast: fast)
-        UIView.animate(withDuration: duration) {
-            if fully{
-                self.frame.origin.y = self.minimalYPosition
-            }else{
-                self.frame.origin.y = (self.minimalYPosition + self.maximalYPosition)/2
-            }
-        }
-    }
-
-    private func collapse(fully:Bool,fast:Bool = false){
-        let duration = animationDuration(fast: fast)
-        UIView.animate(withDuration: duration) {
-            if fully{
-                self.frame.origin.y = self.maximalYPosition
-            }else{
-                self.frame.origin.y = (self.minimalYPosition + self.maximalYPosition)/2
-            }
-        }
-    }
-
     private func animationDuration(fast:Bool) -> Double {
         if fast {
             return 0.25
@@ -118,15 +100,30 @@ public class JKBottomSearchView: UIView{
             return 1
         }
     }
+
+    private func toggleExpantion(_ state: JKBottomSearchViewExpanstionState, fast:Bool = false){
+        let duration = animationDuration(fast: fast)
+        UIView.animate(withDuration: duration) {
+            switch state{
+            case .fullyExpanded:
+                self.frame.origin.y = self.minimalYPosition
+            case .middle:
+                self.frame.origin.y = (self.minimalYPosition + self.maximalYPosition)/2
+            case .fullyCollapsed:
+                self.frame.origin.y = self.maximalYPosition
+            }
+
+        }
+    }
 }
 
 extension JKBottomSearchView : UISearchBarDelegate {
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        expand(fully: true)
+        toggleExpantion(.fullyExpanded)
     }
 
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        collapse(fully: true)
+        toggleExpantion(.fullyCollapsed)
     }
 
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
