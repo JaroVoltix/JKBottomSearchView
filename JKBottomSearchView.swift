@@ -73,6 +73,16 @@ public class JKBottomSearchView: UIView{
 
     private func setupView(){
 
+        let dragIndicationView = UIView(frame: .zero)
+        dragIndicationView.backgroundColor = .lightGray
+        dragIndicationView.translatesAutoresizingMaskIntoConstraints = false
+        blurView.contentView.addSubview(dragIndicationView)
+        dragIndicationView.centerXAnchor.constraint(equalTo: blurView.contentView.centerXAnchor).isActive = true
+        dragIndicationView.topAnchor.constraint(equalTo: blurView.contentView.topAnchor, constant: 2).isActive = true
+        dragIndicationView.widthAnchor.constraint(equalToConstant: UIWindow().frame.width / 15).isActive = true
+        dragIndicationView.heightAnchor.constraint(equalToConstant: 4).isActive = true
+        dragIndicationView.layer.cornerRadius = 2
+
         blurView.effect = blurEffect
         blurView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: self.frame.size)
         blurView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
