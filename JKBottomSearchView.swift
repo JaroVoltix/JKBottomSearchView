@@ -14,11 +14,38 @@ public enum JKBottomSearchViewExpanstionState{
     case fullyCollapsed
 }
 
+private class SearchBarInterceptor:NSObject,UISearchBarDelegate {
+    var primaryDelegate:UISearchBarDelegate?
+    var secondaryDelegate: UISearchBarDelegate?
+    override func responds(to aSelector: Selector!) -> Bool {
+        return primaryDelegate?.responds(to: aSelector) ?? false || secondaryDelegate?.responds(to: aSelector) ?? false
+    }
+
+    override func forwardingTarget(for aSelector: Selector!) -> Any? {
+        if primaryDelegate?.responds(to: aSelector) == true {
+            return primaryDelegate
+        }
+        return secondaryDelegate
+    }
+}
+
 public class JKBottomSearchView: UIView{
+
+    public var searchBarDelegate: UISearchBarDelegate?{
+        didSet{proxy.secondaryDelegate = searchBarDelegate}
+    }
+    public var tableViewDelegate: UITableViewDelegate?{
+        didSet{tableView.delegate = tableViewDelegate}
+    }
+    public var tableViewDataSource: UITableViewDataSource?{
+        didSet{tableView.dataSource = tableViewDataSource}
+    }
 
     private let paddingFromTop:CGFloat = 8
     private let minimalYPosition:CGFloat
     private let maximalYPosition:CGFloat
+    private var tableView:UITableView!
+    private var proxy = SearchBarInterceptor()
 
     public init(){
         let windowFrame = UIWindow().frame
@@ -29,6 +56,7 @@ public class JKBottomSearchView: UIView{
         self.minimalYPosition = windowFrame.height - frame.height
         self.maximalYPosition = frame.origin.y
         super.init(frame: frame)
+
         setupView()
     }
 
@@ -48,11 +76,12 @@ public class JKBottomSearchView: UIView{
 
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: paddingFromTop, width: frame.width, height: 56))
         blurView.contentView.addSubview(searchBar)
-        searchBar.delegate = self
+        proxy.primaryDelegate = self
+        searchBar.delegate = proxy
         searchBar.enablesReturnKeyAutomatically = false
-
+        
         let tableViewOriginY = searchBar.frame.origin.y + searchBar.frame.height
-        let tableView = UITableView(frame: CGRect(
+        tableView = UITableView(frame: CGRect(
             x:0, y: tableViewOriginY,
             width: frame.width, height:frame.height - tableViewOriginY ))
         tableView.backgroundColor = .clear
@@ -112,21 +141,24 @@ public class JKBottomSearchView: UIView{
             case .fullyCollapsed:
                 self.frame.origin.y = self.maximalYPosition
             }
-
         }
     }
+
 }
 
 extension JKBottomSearchView : UISearchBarDelegate {
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         toggleExpantion(.fullyExpanded)
+        searchBarDelegate?.searchBarTextDidBeginEditing?(searchBar)
     }
 
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         toggleExpantion(.fullyCollapsed)
+        searchBarDelegate?.searchBarTextDidEndEditing?(searchBar)
     }
 
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        searchBarDelegate?.searchBarSearchButtonClicked?(searchBar)
     }
 }
