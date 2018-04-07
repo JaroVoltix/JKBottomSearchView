@@ -50,6 +50,7 @@ public class JKBottomSearchView: UIView{
     private var tableView:UITableView!
     private var proxy = SearchBarInterceptor()
     private let blurView:UIVisualEffectView! = UIVisualEffectView(effect:nil)
+    private var currentExpantionState: JKBottomSearchViewExpanstionState = .fullyCollapsed
 
     public init(){
         let windowFrame = UIWindow().frame
@@ -81,7 +82,7 @@ public class JKBottomSearchView: UIView{
         dragIndicationView.topAnchor.constraint(equalTo: blurView.contentView.topAnchor, constant: 2).isActive = true
         dragIndicationView.widthAnchor.constraint(equalToConstant: UIWindow().frame.width / 15).isActive = true
         dragIndicationView.heightAnchor.constraint(equalToConstant: 4).isActive = true
-        dragIndicationView.layer.cornerRadius = 2
+        dragIndicationView.layer.cornerRadius = 1
 
         blurView.effect = blurEffect
         blurView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: self.frame.size)
@@ -104,11 +105,20 @@ public class JKBottomSearchView: UIView{
         blurView.contentView.addSubview(tableView)
 
 
+
         let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(userDidPan))
+        //        tableDragGestureRecognizer.delegate = self
+        dragGestureRecognizer.delegate = self
         blurView.contentView.addGestureRecognizer(dragGestureRecognizer)
+        //        tableView.addGestureRecognizer(tableDragGestureRecognizer)
     }
 
     @objc private func userDidPan(_ sender: UIPanGestureRecognizer){
+        let senderView = sender.view
+        let loc = sender.location(in: senderView)
+        let tappedView = senderView?.hitTest(loc, with: nil)
+
+
         if sender.state == .ended{
             let currentYPosition = frame.origin.y
             let toTopDistance = abs(Int32(currentYPosition - minimalYPosition))
@@ -123,6 +133,14 @@ public class JKBottomSearchView: UIView{
                 toggleExpantion(.middle,fast:true)
             }
         }else{
+            if tappedView?.superview is UITableViewCell{
+                if let visibleIndexPaths = tableView.indexPathsForVisibleRows{
+                    if !visibleIndexPaths.contains(IndexPath(row: 0 , section: 0)) && tableView.isScrollEnabled == true{
+                        sender.setTranslation(CGPoint.zero, in: self)
+                        return
+                    }
+                }
+            }
             let translation = sender.translation(in: self)
 
             var destinationY = self.frame.origin.y + translation.y
@@ -151,14 +169,24 @@ public class JKBottomSearchView: UIView{
             switch state{
             case .fullyExpanded:
                 self.frame.origin.y = self.minimalYPosition
+                self.tableView.isScrollEnabled = true
             case .middle:
                 self.frame.origin.y = (self.minimalYPosition + self.maximalYPosition)/2
+                self.tableView.isScrollEnabled = false
             case .fullyCollapsed:
                 self.frame.origin.y = self.maximalYPosition
+                self.tableView.isScrollEnabled = false
             }
         }
+        self.currentExpantionState = state
     }
 
+}
+
+extension JKBottomSearchView: UIGestureRecognizerDelegate{
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
 
 extension JKBottomSearchView : UISearchBarDelegate {
