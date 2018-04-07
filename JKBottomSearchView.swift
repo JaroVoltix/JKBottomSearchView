@@ -31,6 +31,9 @@ private class SearchBarInterceptor:NSObject,UISearchBarDelegate {
 
 public class JKBottomSearchView: UIView{
 
+    public var blurEffect: UIBlurEffect?{
+        didSet{blurView.effect = blurEffect}
+    }
     public var searchBarDelegate: UISearchBarDelegate?{
         didSet{proxy.secondaryDelegate = searchBarDelegate}
     }
@@ -46,6 +49,7 @@ public class JKBottomSearchView: UIView{
     private let maximalYPosition:CGFloat
     private var tableView:UITableView!
     private var proxy = SearchBarInterceptor()
+    private let blurView:UIVisualEffectView! = UIVisualEffectView(effect:nil)
 
     public init(){
         let windowFrame = UIWindow().frame
@@ -69,17 +73,18 @@ public class JKBottomSearchView: UIView{
 
     private func setupView(){
 
-        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        blurView.effect = blurEffect
         blurView.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: self.frame.size)
         blurView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         addSubview(blurView)
 
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: paddingFromTop, width: frame.width, height: 56))
         blurView.contentView.addSubview(searchBar)
+
         proxy.primaryDelegate = self
         searchBar.delegate = proxy
         searchBar.enablesReturnKeyAutomatically = false
-        
+
         let tableViewOriginY = searchBar.frame.origin.y + searchBar.frame.height
         tableView = UITableView(frame: CGRect(
             x:0, y: tableViewOriginY,
