@@ -51,6 +51,7 @@ public class JKBottomSearchView: UIView{
     private var proxy = SearchBarInterceptor()
     private let blurView:UIVisualEffectView! = UIVisualEffectView(effect:nil)
     private var currentExpantionState: JKBottomSearchViewExpanstionState = .fullyCollapsed
+    private var startedDraggingOnSearchBar = false
 
     public init(){
         let windowFrame = UIWindow().frame
@@ -119,7 +120,19 @@ public class JKBottomSearchView: UIView{
         let tappedView = senderView?.hitTest(loc, with: nil)
 
 
+        if sender.state == .began{
+            var viewToCheck:UIView? = tappedView
+            while viewToCheck != nil {
+                if viewToCheck is UISearchBar{
+                    startedDraggingOnSearchBar = true
+                    break
+                }
+                viewToCheck = viewToCheck?.superview
+            }
+        }
+
         if sender.state == .ended{
+            startedDraggingOnSearchBar = false
             let currentYPosition = frame.origin.y
             let toTopDistance = abs(Int32(currentYPosition - minimalYPosition))
             let toBottomDistance = abs(Int32(currentYPosition  - maximalYPosition))
@@ -133,7 +146,8 @@ public class JKBottomSearchView: UIView{
                 toggleExpantion(.middle,fast:true)
             }
         }else{
-            if tappedView?.superview is UITableViewCell{
+
+            if tappedView?.superview is UITableViewCell && startedDraggingOnSearchBar == false{
                 if let visibleIndexPaths = tableView.indexPathsForVisibleRows{
                     if !visibleIndexPaths.contains(IndexPath(row: 0 , section: 0)) && tableView.isScrollEnabled == true{
                         sender.setTranslation(CGPoint.zero, in: self)
