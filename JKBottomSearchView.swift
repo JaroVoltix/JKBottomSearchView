@@ -14,7 +14,10 @@ public enum JKBottomSearchViewExpanstionState{
     case fullyCollapsed
 }
 
-private class SearchBarInterceptor:NSObject,UISearchBarDelegate {
+public typealias JKBottomSearchViewDelegate = UISearchBarDelegate & UITableViewDelegate
+public typealias JKBottomSearchDataSource = UITableViewDataSource
+
+private class SearchBarProxy:NSObject,UISearchBarDelegate {
     var primaryDelegate:UISearchBarDelegate?
     var secondaryDelegate: UISearchBarDelegate?
     override func responds(to aSelector: Selector!) -> Bool {
@@ -34,21 +37,22 @@ public class JKBottomSearchView: UIView{
     public var blurEffect: UIBlurEffect?{
         didSet{blurView.effect = blurEffect}
     }
-    public var searchBarDelegate: UISearchBarDelegate?{
-        didSet{proxy.secondaryDelegate = searchBarDelegate}
+    public var delegate:JKBottomSearchViewDelegate?{
+        didSet{ proxy.secondaryDelegate = delegate}
     }
-    public var tableViewDelegate: UITableViewDelegate?{
-        didSet{tableView.delegate = tableViewDelegate}
+    public var dataSource:JKBottomSearchDataSource?{
+        didSet{ tableView.dataSource = dataSource}
     }
-    public var tableViewDataSource: UITableViewDataSource?{
-        didSet{tableView.dataSource = tableViewDataSource}
+
+    public var contentView:UIView{
+        return blurView.contentView
     }
 
     private let paddingFromTop:CGFloat = 8
     private let minimalYPosition:CGFloat
     private let maximalYPosition:CGFloat
     private var tableView:UITableView!
-    private var proxy = SearchBarInterceptor()
+    private var proxy = SearchBarProxy()
     private let blurView:UIVisualEffectView! = UIVisualEffectView(effect:nil)
     private var currentExpantionState: JKBottomSearchViewExpanstionState = .fullyCollapsed
     private var startedDraggingOnSearchBar = false
@@ -108,10 +112,8 @@ public class JKBottomSearchView: UIView{
 
 
         let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(userDidPan))
-        //        tableDragGestureRecognizer.delegate = self
         dragGestureRecognizer.delegate = self
         blurView.contentView.addGestureRecognizer(dragGestureRecognizer)
-        //        tableView.addGestureRecognizer(tableDragGestureRecognizer)
     }
 
     @objc private func userDidPan(_ sender: UIPanGestureRecognizer){
@@ -194,7 +196,6 @@ public class JKBottomSearchView: UIView{
         }
         self.currentExpantionState = state
     }
-
 }
 
 extension JKBottomSearchView: UIGestureRecognizerDelegate{
@@ -206,16 +207,16 @@ extension JKBottomSearchView: UIGestureRecognizerDelegate{
 extension JKBottomSearchView : UISearchBarDelegate {
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         toggleExpantion(.fullyExpanded)
-        searchBarDelegate?.searchBarTextDidBeginEditing?(searchBar)
+        delegate?.searchBarTextDidBeginEditing?(searchBar)
     }
 
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         toggleExpantion(.fullyCollapsed)
-        searchBarDelegate?.searchBarTextDidEndEditing?(searchBar)
+        delegate?.searchBarTextDidEndEditing?(searchBar)
     }
 
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        searchBarDelegate?.searchBarSearchButtonClicked?(searchBar)
+        delegate?.searchBarSearchButtonClicked?(searchBar)
     }
 }

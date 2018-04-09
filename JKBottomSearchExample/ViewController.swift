@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let searchView = JKBottomSearchView()
         view.addSubview(searchView)
-        searchView.tableViewDataSource = self
+        searchView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
