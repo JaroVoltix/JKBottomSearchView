@@ -1,4 +1,5 @@
 # JKBottomSearchView
+[![Build Status](https://travis-ci.org/JaroVoltix/JKBottomSearchView.svg?branch=master)](https://travis-ci.org/JaroVoltix/JKBottomSearchView)
 
 ## Installation
 
