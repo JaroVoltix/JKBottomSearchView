@@ -11,6 +11,8 @@
 		4A693B992077E14100B4FE37 /* JKBottomSearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693B982077E14100B4FE37 /* JKBottomSearchViewTests.swift */; };
 		4A693B9B2077E14100B4FE37 /* JKBottomSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A693B8D2077E14100B4FE37 /* JKBottomSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A693BA52077E18E00B4FE37 /* JKBottomSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */; };
+		4AA9AE0D207D375400829896 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AA9AE0C207D375400829896 /* README.md */; };
+		4AA9AE0F207D376100829896 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AA9AE0E207D376100829896 /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		4A693B982077E14100B4FE37 /* JKBottomSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKBottomSearchViewTests.swift; sourceTree = "<group>"; };
 		4A693B9A2077E14100B4FE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKBottomSearchView.swift; sourceTree = "<group>"; };
+		4AA9AE0C207D375400829896 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4AA9AE0E207D376100829896 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 		4A693B802077E14100B4FE37 = {
 			isa = PBXGroup;
 			children = (
+				4AA9AE0E207D376100829896 /* LICENSE.md */,
+				4AA9AE0C207D375400829896 /* README.md */,
 				4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */,
 				4A693B8C2077E14100B4FE37 /* JKBottomSearchView */,
 				4A693B972077E14100B4FE37 /* JKBottomSearchViewTests */,
@@ -182,6 +188,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA9AE0F207D376100829896 /* LICENSE.md in Resources */,
+				4AA9AE0D207D375400829896 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

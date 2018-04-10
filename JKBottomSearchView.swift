@@ -52,10 +52,40 @@ public class JKBottomSearchView: UIView{
     private let minimalYPosition:CGFloat
     private let maximalYPosition:CGFloat
     private var tableView:UITableView!
+    private var searchBar:UISearchBar!
     private var proxy = SearchBarProxy()
     private let blurView:UIVisualEffectView! = UIVisualEffectView(effect:nil)
     private var currentExpantionState: JKBottomSearchViewExpanstionState = .fullyCollapsed
     private var startedDraggingOnSearchBar = false
+
+    //MARK: - Search Bar Customization
+    public var barStyle:UIBarStyle {
+        get{return searchBar.barStyle}
+        set{searchBar.barStyle = newValue}
+    }
+    public var searchBarStyle:UISearchBarStyle {
+        get{ return searchBar.searchBarStyle}
+        set{ searchBar.searchBarStyle = newValue}
+    }
+    public var searchBarTintColor:UIColor?{
+        get{ return searchBar.barTintColor}
+        set{ searchBar.barTintColor = newValue}
+    }
+    public var placeholder:String?{
+        get{ return searchBar.placeholder}
+        set{ searchBar.placeholder = newValue}
+    }
+    public var searchBarTextField:UITextField{
+        get{ return searchBar.value(forKey: "searchField") as! UITextField}
+    }
+    public var showsCancelButton:Bool{
+        get{ return searchBar.showsCancelButton}
+        set{ searchBar.showsCancelButton = newValue}
+    }
+    public var enablesReturnKeyAutomatically:Bool{
+        get{ return searchBar.enablesReturnKeyAutomatically}
+        set{ searchBar.enablesReturnKeyAutomatically = newValue}
+    }
 
     public init(){
         let windowFrame = UIWindow().frame
@@ -94,7 +124,7 @@ public class JKBottomSearchView: UIView{
         blurView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         addSubview(blurView)
 
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: paddingFromTop, width: frame.width, height: 56))
+        searchBar = UISearchBar(frame: CGRect(x: 0, y: paddingFromTop, width: frame.width, height: 56))
         blurView.contentView.addSubview(searchBar)
 
         proxy.primaryDelegate = self
@@ -179,7 +209,7 @@ public class JKBottomSearchView: UIView{
         }
     }
 
-    private func toggleExpantion(_ state: JKBottomSearchViewExpanstionState, fast:Bool = false){
+    public func toggleExpantion(_ state: JKBottomSearchViewExpanstionState, fast:Bool = false){
         let duration = animationDuration(fast: fast)
         UIView.animate(withDuration: duration) {
             switch state{

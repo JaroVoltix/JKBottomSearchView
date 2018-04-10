@@ -48,6 +48,19 @@ searchView.blurEffect = UIBlurEffect(style: .dark)
 
 //Any non tableView and searchBar customization should be performed on contentView
 searchView.contentView.backgroundColor = .red
+
+//Customizing searchBar
+searchView.barStyle = .black 
+searchView.searchBarStyle = .minimal 
+searchView.searchBarTintColor = .black
+searchView.placeholder = "What are you looking for"
+searchView.showsCancelButton = true
+searchView.enablesReturnKeyAutomatically = true
+
+//Customizing searchBar textField
+let textField = searchView.searchBarTextField
+textField.textColor = .red
+
 ```
 
 ## License
