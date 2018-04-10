@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum JKBottomSearchViewExpansionState{
+public enum JKBottomSearchViewExpandingState{
     case fullyExpanded
     case middle
     case fullyCollapsed
@@ -38,7 +38,8 @@ public class JKBottomSearchView: UIView{
         didSet{blurView.effect = blurEffect}
     }
     public var delegate:JKBottomSearchViewDelegate?{
-        didSet{ proxy.secondaryDelegate = delegate}
+        didSet{ proxy.secondaryDelegate = delegate
+            tableView.delegate = delegate}
     }
     public var dataSource:JKBottomSearchDataSource?{
         didSet{ tableView.dataSource = dataSource}
@@ -47,16 +48,16 @@ public class JKBottomSearchView: UIView{
         return blurView.contentView
     }
     public var tableView:UITableView!
-    public var fastExpansionTime:Double = 0.25
-    public var slowExpansionTime:Double = 1
+    public var fastExpandingTime:Double = 0.25
+    public var slowExpandingTime:Double = 1
+    public var minimalYPosition:CGFloat 
 
     private let paddingFromTop:CGFloat = 8
-    private let minimalYPosition:CGFloat
     private let maximalYPosition:CGFloat
     private var searchBar:UISearchBar!
     private var proxy = SearchBarProxy()
     private let blurView:UIVisualEffectView! = UIVisualEffectView(effect:nil)
-    private var currentExpansionState: JKBottomSearchViewExpansionState = .fullyCollapsed
+    private var currentExpandedState: JKBottomSearchViewExpandingState = .fullyCollapsed
     private var startedDraggingOnSearchBar = false
 
     //MARK: - Search Bar Customization
@@ -172,11 +173,11 @@ public class JKBottomSearchView: UIView{
             let toCenterDistance = abs(Int32(currentYPosition - (minimalYPosition + maximalYPosition) / 2))
             let sortedDistances = [toTopDistance,toBottomDistance,toCenterDistance].sorted()
             if sortedDistances[0] == toTopDistance{
-                toggleExpansion(.fullyExpanded,fast:true)
+                toggleExpand(.fullyExpanded,fast:true)
             }else if sortedDistances[0] == toBottomDistance{
-                toggleExpansion(.fullyCollapsed,fast:true)
+                toggleExpand(.fullyCollapsed,fast:true)
             }else{
-                toggleExpansion(.middle,fast:true)
+                toggleExpand(.middle,fast:true)
             }
         }else{
 
@@ -204,13 +205,13 @@ public class JKBottomSearchView: UIView{
 
     private func animationDuration(fast:Bool) -> Double {
         if fast {
-            return fastExpansionTime
+            return fastExpandingTime
         }else{
-            return slowExpansionTime
+            return slowExpandingTime
         }
     }
 
-    public func toggleExpansion(_ state: JKBottomSearchViewExpansionState, fast:Bool = false){
+    public func toggleExpand(_ state: JKBottomSearchViewExpandingState, fast:Bool = false){
         let duration = animationDuration(fast: fast)
         UIView.animate(withDuration: duration) {
             switch state{
@@ -225,7 +226,7 @@ public class JKBottomSearchView: UIView{
                 self.tableView.isScrollEnabled = false
             }
         }
-        self.currentExpansionState = state
+        self.currentExpandedState = state
     }
 }
 
@@ -237,12 +238,12 @@ extension JKBottomSearchView: UIGestureRecognizerDelegate{
 
 extension JKBottomSearchView : UISearchBarDelegate {
     public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        toggleExpansion(.fullyExpanded)
+        toggleExpand(.fullyExpanded)
         delegate?.searchBarTextDidBeginEditing?(searchBar)
     }
 
     public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        toggleExpansion(.fullyCollapsed)
+        toggleExpand(.fullyCollapsed)
         delegate?.searchBarTextDidEndEditing?(searchBar)
     }
 

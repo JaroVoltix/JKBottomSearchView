@@ -1,6 +1,11 @@
 # JKBottomSearchView
 [![Build Status](https://travis-ci.org/JaroVoltix/JKBottomSearchView.svg?branch=master)](https://travis-ci.org/JaroVoltix/JKBottomSearchView)
 
+![Alt Text](https://github.com/JaroVoltix/JKBottomSearchView/assets/example.gif)
+![alt text](https://github.com/JaroVoltix/JKBottomSearchView/assets/FullyCollapsed.png)
+![alt text](https://github.com/JaroVoltix/JKBottomSearchView/assets/FullyExpanded.png)
+![alt text](https://github.com/JaroVoltix/JKBottomSearchView/assets/FullyExpandedAndFilled.png)
+![alt text](https://github.com/JaroVoltix/JKBottomSearchView/assets/MiddleExpanded.png)
 ## Installation
 
 ### Cocapods
@@ -67,11 +72,13 @@ textField.textColor = .red
 searchView.tableView.isScrollEnabled = false
 
 //Customizing expansion 
-searchView.fastExpansionTime = 0.1
-searchView.slowExpansionTime = 2
-searchView.toggleExpansion(.fullyExpanded,fast:false) // fast parameter is optional, default false
+searchView.minimalYPosition = 100 // distance from top after fully expanding 
+searchView.fastExpandindTime = 0.1
+searchView.slowExpandingTime = 2
+searchView.toggleExpand(.fullyExpanded,fast:false) // fast parameter is optional, default false
 ```
 
 ## License
+Icons used in example available at: https://icons8.com
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
