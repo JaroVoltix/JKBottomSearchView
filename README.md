@@ -6,7 +6,7 @@
 ``` Coming soon```
 
 ### Carthage 
-``` github JeyKeyCom/JKBottomSearchView```
+``` github "JeyKeyCom/JKBottomSearchView"```
 
 ## Requirment
  - iOS 9+
@@ -23,7 +23,7 @@ func viewDidLoad(){
 }
 ```
 ### DataSource & Delegate
-JKBottomSearchViewDataSource is and alias to UITableViewDataSource
+JKBottomSearchViewDataSource is and alias to UITableViewDataSource. 
 
 ```
 extension ViewController:JKBottomSearchViewDataSource{}
@@ -32,7 +32,7 @@ extension ViewController:JKBottomSearchViewDataSource{}
 searchView.dataSource = self
 ```
 
-JKBottomSearchViewDelegate is an alias for UITableViewDelegate & UISearchBarDelegate
+JKBottomSearchViewDelegate is an alias for UITableViewDelegate & UISearchBarDelegate.
 
 ```
 extension ViewController:JKBottomSearchViewDelegate{}
@@ -52,4 +52,4 @@ searchView.contentView.backgroundColor = .red
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
