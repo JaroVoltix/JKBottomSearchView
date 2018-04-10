@@ -1,12 +1,13 @@
 # JKBottomSearchView
 [![Build Status](https://travis-ci.org/JaroVoltix/JKBottomSearchView.svg?branch=master)](https://travis-ci.org/JaroVoltix/JKBottomSearchView)
-<p>
+<p align="middle">
 <img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/example.gif" width="150" height="266" title="example in gif">
 <img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyCollapsed.png" width="150" height="266" title="FullyCollapsed">
 <img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyExpanded.png" width="150" height="266" title="FullyExpanded">
 <img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyExpandedAndFilled.png" width="150" height="266" title="FullyExpandedAndFilled">
 <img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/MiddleExpanded.png" width="150" height="266" title="MiddleExpanded">
 </p>
+
 ## Installation
 
 ### Cocapods
