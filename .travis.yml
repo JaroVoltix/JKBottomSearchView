@@ -1,2 +1,1 @@
-language: swift
-xcode_scheme: JKBottomSearchView
+language: objective-c
