@@ -62,6 +62,14 @@ searchView.enablesReturnKeyAutomatically = true
 let textField = searchView.searchBarTextField
 textField.textColor = .red
 
+//Customizing tableView
+//You can access tableView and customize as You like by tableView property
+searchView.tableView.isScrollEnabled = false
+
+//Customizing expansion 
+searchView.fastExpansionTime = 0.1
+searchView.slowExpansionTime = 2
+searchView.toggleExpansion(.fullyExpanded,fast:false) // fast parameter is optional, default false
 ```
 
 ## License
