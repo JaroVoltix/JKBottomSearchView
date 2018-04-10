@@ -1,15 +1,12 @@
 # JKBottomSearchView
 [![Build Status](https://travis-ci.org/JaroVoltix/JKBottomSearchView.svg?branch=master)](https://travis-ci.org/JaroVoltix/JKBottomSearchView)
 
-<img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/example.gif" width="375" height="667" title="Github Logo">
-<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="256" height="256" title="Github Logo">
-<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="256" height="256" title="Github Logo">
-<!---->
-<!--![Alt Text](https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/example.gif)-->
-<!--![alt text](https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyCollapsed.png)-->
-<!--![alt text](https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyExpanded.png)-->
-<!--![alt text](https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyExpandedAndFilled.png)-->
-<!--![alt text](https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/MiddleExpanded.png)-->
+<img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/example.gif" width="225" height="400" title="example in gif">
+<img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyCollapsed.png" width="225" height="400" title="FullyCollapsed">
+<img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyExpanded.png" width="225" height="400" title="FullyExpanded">
+<img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/FullyExpandedAdnFilled.pmg" width="225" height="400" title="FullyExpandedAndFilled">
+<img src="https://github.com/JaroVoltix/JKBottomSearchView/blob/master/assets/MiddleExpanded.png" width="225" height="400" title="MiddleExpanded">
+
 ## Installation
 
 ### Cocapods
