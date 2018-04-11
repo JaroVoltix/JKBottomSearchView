@@ -21,6 +21,10 @@
  - Xcode 9+
  - Swift 4.1+
  
+## Example
+You can check out example project that use JKBottomSearchView here:
+https://github.com/JaroVoltix/JKBottomSearchViewExample
+ 
 ## Usage
 Create JKBottomSearchView 
 ```
