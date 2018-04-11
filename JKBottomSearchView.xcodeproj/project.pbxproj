@@ -7,31 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A693B942077E14100B4FE37 /* JKBottomSearchView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */; };
-		4A693B992077E14100B4FE37 /* JKBottomSearchViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693B982077E14100B4FE37 /* JKBottomSearchViewTests.swift */; };
 		4A693B9B2077E14100B4FE37 /* JKBottomSearchView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A693B8D2077E14100B4FE37 /* JKBottomSearchView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A693BA52077E18E00B4FE37 /* JKBottomSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */; };
 		4AA9AE0D207D375400829896 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AA9AE0C207D375400829896 /* README.md */; };
 		4AA9AE0F207D376100829896 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AA9AE0E207D376100829896 /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		4A693B952077E14100B4FE37 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4A693B812077E14100B4FE37 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A693B892077E14100B4FE37;
-			remoteInfo = JKBottomSearchView;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JKBottomSearchView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A693B8D2077E14100B4FE37 /* JKBottomSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JKBottomSearchView.h; sourceTree = "<group>"; };
 		4A693B8E2077E14100B4FE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A693B932077E14100B4FE37 /* JKBottomSearchViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKBottomSearchViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4A693B982077E14100B4FE37 /* JKBottomSearchViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKBottomSearchViewTests.swift; sourceTree = "<group>"; };
-		4A693B9A2077E14100B4FE37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JKBottomSearchView.swift; sourceTree = "<group>"; };
 		4AA9AE0C207D375400829896 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4AA9AE0E207D376100829896 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -45,25 +30,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A693B902077E14100B4FE37 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A693B942077E14100B4FE37 /* JKBottomSearchView.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4A693B802077E14100B4FE37 = {
 			isa = PBXGroup;
 			children = (
+				4AB17755207EB3DC00649B1A /* Sources */,
 				4AA9AE0E207D376100829896 /* LICENSE.md */,
 				4AA9AE0C207D375400829896 /* README.md */,
-				4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */,
-				4A693B8C2077E14100B4FE37 /* JKBottomSearchView */,
-				4A693B972077E14100B4FE37 /* JKBottomSearchViewTests */,
 				4A693B8B2077E14100B4FE37 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,27 +47,18 @@
 			isa = PBXGroup;
 			children = (
 				4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */,
-				4A693B932077E14100B4FE37 /* JKBottomSearchViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4A693B8C2077E14100B4FE37 /* JKBottomSearchView */ = {
+		4AB17755207EB3DC00649B1A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				4A693B8D2077E14100B4FE37 /* JKBottomSearchView.h */,
 				4A693B8E2077E14100B4FE37 /* Info.plist */,
+				4A693BA42077E18E00B4FE37 /* JKBottomSearchView.swift */,
 			);
-			path = JKBottomSearchView;
-			sourceTree = "<group>";
-		};
-		4A693B972077E14100B4FE37 /* JKBottomSearchViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				4A693B982077E14100B4FE37 /* JKBottomSearchViewTests.swift */,
-				4A693B9A2077E14100B4FE37 /* Info.plist */,
-			);
-			path = JKBottomSearchViewTests;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,24 +93,6 @@
 			productReference = 4A693B8A2077E14100B4FE37 /* JKBottomSearchView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4A693B922077E14100B4FE37 /* JKBottomSearchViewTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4A693BA12077E14100B4FE37 /* Build configuration list for PBXNativeTarget "JKBottomSearchViewTests" */;
-			buildPhases = (
-				4A693B8F2077E14100B4FE37 /* Sources */,
-				4A693B902077E14100B4FE37 /* Frameworks */,
-				4A693B912077E14100B4FE37 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4A693B962077E14100B4FE37 /* PBXTargetDependency */,
-			);
-			name = JKBottomSearchViewTests;
-			productName = JKBottomSearchViewTests;
-			productReference = 4A693B932077E14100B4FE37 /* JKBottomSearchViewTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,9 +106,6 @@
 					4A693B892077E14100B4FE37 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 0930;
-					};
-					4A693B922077E14100B4FE37 = {
-						CreatedOnToolsVersion = 9.3;
 					};
 				};
 			};
@@ -178,7 +123,6 @@
 			projectRoot = "";
 			targets = (
 				4A693B892077E14100B4FE37 /* JKBottomSearchView */,
-				4A693B922077E14100B4FE37 /* JKBottomSearchViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -193,13 +137,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A693B912077E14100B4FE37 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -211,23 +148,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A693B8F2077E14100B4FE37 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4A693B992077E14100B4FE37 /* JKBottomSearchViewTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4A693B962077E14100B4FE37 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4A693B892077E14100B4FE37 /* JKBottomSearchView */;
-			targetProxy = 4A693B952077E14100B4FE37 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4A693B9C2077E14100B4FE37 /* Debug */ = {
@@ -405,44 +326,6 @@
 			};
 			name = Release;
 		};
-		4A693BA22077E14100B4FE37 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8K9V2VJ95T;
-				INFOPLIST_FILE = JKBottomSearchViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jerronimo.JKBottomSearchViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		4A693BA32077E14100B4FE37 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8K9V2VJ95T;
-				INFOPLIST_FILE = JKBottomSearchViewTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jerronimo.JKBottomSearchViewTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -460,15 +343,6 @@
 			buildConfigurations = (
 				4A693B9F2077E14100B4FE37 /* Debug */,
 				4A693BA02077E14100B4FE37 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4A693BA12077E14100B4FE37 /* Build configuration list for PBXNativeTarget "JKBottomSearchViewTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4A693BA22077E14100B4FE37 /* Debug */,
-				4A693BA32077E14100B4FE37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
