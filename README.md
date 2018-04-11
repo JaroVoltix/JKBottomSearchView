@@ -11,7 +11,7 @@
 ## Installation
 
 ### Cocapods
-``` Coming soon```
+`pod "JKBottomSearchView"`
 
 ### Carthage 
 ``` github "JeyKeyCom/JKBottomSearchView"```
